@@ -32,7 +32,7 @@ def gogo(infile_name):
     X_predict = vectorizer.transform(X_predict)
     y_Predict = lgs.predict(X_predict)
     prediction = y_Predict.tolist()
-    print(prediction)
+    #print(prediction)
 
     for _ in prediction:
         temp = {}
