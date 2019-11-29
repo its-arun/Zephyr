@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+    {% for logs in data %}
+        {% for log, status in logs.items() %}
+            <p>{{ log }} - {{ status }}</p>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
