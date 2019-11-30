@@ -1,8 +1,145 @@
-<html>
-  <head>
-    <title>ML WAF</title>
-  </head>
-  <body>
-    {% block content %}{% endblock %}
-  </body>
+<!-- - var navbarShadow = true-->
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+  <meta name="keywords" content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
+  <meta name="author" content="PIXINVENT">
+  <title>Dashboard eCommerce - Stack Responsive Bootstrap 4 Admin Template</title>
+  <link rel="apple-touch-icon" href="/static/app-assets/images/ico/apple-icon-120.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/static/app-assets/images/ico/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
+  rel="stylesheet">
+  <!-- BEGIN VENDOR CSS-->
+  <link rel="stylesheet" type="text/css" href="/static/app-assets/css/vendors.css">
+  <link rel="stylesheet" type="text/css" href="/static/app-assets/vendors/css/extensions/unslider.css">
+  <link rel="stylesheet" type="text/css" href="/static/app-assets/vendors/css/weather-icons/climacons.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/app-assets/fonts/meteocons/style.css">
+  <link rel="stylesheet" type="text/css" href="/static/app-assets/vendors/css/charts/morris.css">
+  <!-- END VENDOR CSS-->
+  <!-- BEGIN STACK CSS-->
+  <link rel="stylesheet" type="text/css" href="/static/app-assets/css/app.css">
+  <!-- END STACK CSS--> 
+  <!-- BEGIN Page Level CSS-->
+  <link rel="stylesheet" type="text/css" href="/static/app-assets/css/core/menu/menu-types/vertical-menu.css">
+  <link rel="stylesheet" type="text/css" href="/static/app-assets/css/core/colors/palette-gradient.css">
+  <link rel="stylesheet" type="text/css" href="/static/app-assets/fonts/simple-line-icons/style.css">
+  <link rel="stylesheet" type="text/css" href="/static/app-assets/css/core/colors/palette-gradient.css">
+  <link rel="stylesheet" type="text/css" href="/static/app-assets/css/pages/timeline.css">
+  <!-- END Page Level CSS-->
+  <!-- BEGIN Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="/static/assets/css/style.css">
+  <!-- END Custom CSS-->
+</head>
+<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar"
+data-open="click" data-menu="vertical-menu" data-col="2-columns">
+  <!-- fixed-top-->
+  <nav class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-semi-light bg-gradient-x-grey-blue">
+    <div class="navbar-wrapper">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+          <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
+          <li class="nav-item">
+            <a class="navbar-brand" href="index.html">
+              <img class="brand-logo" alt="stack admin logo" src="/static/app-assets/images/logo/stack-logo.png">
+              <h2 class="brand-text">Stack</h2>
+            </a>
+          </li>
+          <li class="nav-item d-md-none">
+            <a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile"><i class="fa fa-ellipsis-v"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-container content">
+        <div class="collapse navbar-collapse" id="navbar-mobile">
+          <ul class="nav navbar-nav mr-auto float-left">
+            <li class="nav-item d-none d-md-block"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>
+    
+    
+            </li>
+              <div class="search-input">
+                <input class="input" type="text" placeholder="Explore Stack...">
+              </div>
+            </li>
+          </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- ////////////////////////////////////////////////////////////////////////////-->
+  <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="main-menu-content">
+      <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+
+      <li class=" nav-item">
+          <a href="https://pixinvent.com/stack-bootstrap-admin-template/documentation"><i class="ft-home"></i>
+            <span class="menu-title" data-i18n="">Home</span>
+          </a>
+
+        <li class=" nav-item"><a href="index.html"><i class="ft-file-text"></i><span class="menu-title" data-i18n="">Log Analysis</span>
+          <ul class="menu-content">
+            <li><a class="menu-item" href="dashboard-ecommerce.html">Trained Data</a>
+            </li>
+            <li><a class="menu-item" href="dashboard-analytics.html">Scan log</a>
+            </li>
+          </ul>
+        </li>
+        <li class=" nav-item"><a href="#"><i class="ft-activity"></i><span class="menu-title" data-i18n="">Malware Analysis</span></a>
+          <ul class="menu-content">
+              <ul class="menu-content">
+                <li><a class="menu-item" href="../vertical-modern-menu-template">Available YARA Rules</a>
+                </li>
+                <li><a class="menu-item" href="../vertical-menu-template">Upload Rules</a>
+                </li>
+                <li><a class="menu-item" href="../vertical-menu-template-semi-dark">Scan Files</a>
+                </li>
+              </ul>
+          </ul>
+        </li>
+        
+        
+        <li class=" nav-item">
+          <a href="https://pixinvent.com/stack-bootstrap-admin-template/documentation"><i class="ft-folder"></i>
+            <span class="menu-title" data-i18n="">Documentation</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="app-content content">
+    {% block content %}
+    
+    
+
+    {% endblock %}
+  </div>
+  <!-- ////////////////////////////////////////////////////////////////////////////-->
+  <footer class="footer footer-static footer-dark navbar-border">
+    <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+      <span class="float-md-left d-block d-md-inline-block">Chandigarh Police Hackathon 2019 </span>
+      
+    </p>
+  </footer>
+  <!-- BEGIN VENDOR JS-->
+  <script src="/static/app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+  <!-- BEGIN VENDOR JS-->
+  <!-- BEGIN PAGE VENDOR JS-->
+  <script src="/static/app-assets/vendors/js/charts/raphael-min.js" type="text/javascript"></script>
+  <script src="/static/app-assets/vendors/js/extensions/unslider-min.js" type="text/javascript"></script>
+  <script src="/static/app-assets/vendors/js/timeline/horizontal-timeline.js" type="text/javascript"></script>
+  <!-- END PAGE VENDOR JS-->
+  <!-- BEGIN STACK JS-->
+  <script src="/static/app-assets/js/core/app-menu.js" type="text/javascript"></script>
+  <script src="/static/app-assets/js/core/app.js" type="text/javascript"></script>
+  <script src="/static/app-assets/js/scripts/customizer.js" type="text/javascript"></script>
+  <script>!function(t,e,n){"use strict";n(".custom-file input").change(function(t){n(this).next(".custom-file-label").html(t.target.files[0].name)})}(window,document,jQuery); </script>
+
+  <!-- END STACK JS-->
+  <!-- BEGIN PAGE LEVEL JS-->
+  <!-- END PAGE LEVEL JS-->
+</body>
 </html>
