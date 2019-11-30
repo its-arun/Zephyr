@@ -1,10 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from detector import gogo
 import json
 from malwareanalysis import malwarescanner
+from werkzeug.utils import secure_filename
+import os
 
 app = Flask(__name__)
 app.debug = True
+app.config['UPLOAD_FOLDER'] = './uploads'
 app.secret_key = 'devkey'
 
 @app.route('/')
@@ -24,7 +27,10 @@ def malware():
 def loghandler():
    if request.method == 'POST':
       f = request.files['file']
-      data = json.loads(gogo(f))
+      filename = secure_filename(f.filename)
+      f.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+      data = json.loads(gogo(os.path.join(app.config['UPLOAD_FOLDER'],filename)))
+      os.remove(os.path.join(app.config['UPLOAD_FOLDER'],filename))
       #f.save(secure_filename(f.filename))
       return render_template('logresult.html', data=data)
 
