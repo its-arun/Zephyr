@@ -4,6 +4,7 @@ import json
 from malwareanalysis import malwarescanner
 from werkzeug.utils import secure_filename
 import os
+from trainer import starttraining
 
 app = Flask(__name__)
 app.debug = True
@@ -26,6 +27,18 @@ def uploadrule():
 @app.route('/malwarescan')
 def malware():
     return render_template('malwarescan.html')
+
+@app.route('/trainlog')
+def trainlog():
+    data = json.loads(starttraining())
+    return render_template('trainlog.html', data=data)
+
+@app.route('/availablerules')
+def availablerules():
+    rulelist = []
+    for _ in os.listdir("rules"):
+        rulelist.append(_)
+    return render_template('yararules.html', rulelist=rulelist)
 
 @app.route('/loghandler', methods = ['POST'])
 def loghandler():
@@ -53,7 +66,10 @@ def yarahandler():
       f = request.files['file']
       filename = secure_filename(f.filename)
       f.save(os.path.join(app.config['RULES_FOLDER'],filename))
-      return render_template('yararules.html', filename=filename)
+      rulelist = []
+      for _ in os.listdir("rules"):
+          rulelist.append(_)
+      return render_template('yararules.html', filename=filename, rulelist=rulelist)
 
 if __name__ == '__main__':
     app.run()

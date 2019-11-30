@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+        <div class="card-header">
+            <h4 id="cards" class="card-title">Log Analysis Model was re-trained</h4>
+            <div class="heading-elements">
+                <ul class="list-inline mb-0">
+                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                    <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-content collapse show" aria-expanded="true">
+            <div class="card-body">
+                <div class="card-text">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr><th colspan="2">Statistics</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>Bad Samples</td>
+                                            <td>{{ data["Bad-samples"] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Good Samples</td>
+                                            <td>{{ data["Good-samples"] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Baseline Constant negative</td>
+                                            <td>{{ data["Baseline-Constant-negative"] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Accuracy</td>
+                                            <td>{{ data["Accuracy"] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Precision</td>
+                                            <td>{{ data["Precision"] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Recall</td>
+                                            <td>{{ data["Recall"] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>F1-Score</td>
+                                            <td>{{ data["F1-Score"] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>AUC</td>
+                                            <td>{{ data["AUC"] }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
