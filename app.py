@@ -12,16 +12,21 @@ app.secret_key = 'devkey'
 
 @app.route('/')
 def hello():
-    return "Hello World!"
+    return render_template('home.html')
 
 @app.route('/logscan')
 def detector():
     return render_template('logscan.html')
 
+@app.route('/uploadrule')
+def uploadrule():
+    return render_template('yaraupload.html')
+
+
 @app.route('/malwarescan')
 def malware():
     #data = gogo('access.log')
-    return render_template('malwarescan.html', data=data)
+    return render_template('malwarescan.html')
 
 @app.route('/loghandler', methods = ['POST'])
 def loghandler():
