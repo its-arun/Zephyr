@@ -23,28 +23,24 @@ def gogo(infile_name):
     vectorizer = joblib.load('vectorizer.pkl')
 
     #do the magic
-    #infile_name = 'access.log'
     infile = open(infile_name, 'r')
     uri_parser(infile)
+    
     #list of dictionaries
     output = []
     X_predict = parsed_uri
     X_predict = vectorizer.transform(X_predict)
     y_Predict = lgs.predict(X_predict)
     prediction = y_Predict.tolist()
-    #print(prediction)
-
+    
+    i = 0
     for _ in prediction:
         temp = {}
-        if prediction[_] == 0:
-            temp = { all_logs[_] : 'Clean' }
-        elif prediction[_] == 1:
-            temp = { all_logs[_] : ' Malicious' }
+        if _ == 0:
+            temp = { all_logs[i] : 'Clean' }
+        elif _ == 1:
+            temp = { all_logs[i] : ' Malicious' }
         output.append(temp)
+        i += 1
 
     return json.dumps(output)
-    #return all_logs
-
-#debugging
-
-#print(gogo('access.log'))
