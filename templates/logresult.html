@@ -1,5 +1,52 @@
 {% extends 'base.html' %}
  
 {% block content %}
-    {{ data }}
+    <div class="card">
+                        <div class="card-header">
+                            <h4 id="cards" class="card-title">access.log - Detailed Analysis</h4>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                    <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-content collapse show" aria-expanded="true">
+                            <div class="card-body">
+                                <div class="card-text">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                        <th>IP</th>
+                                        <th>Date</th>
+                                        <th>Request</th>
+                                        <th>User Agent</th>
+                                        <th>Verdict</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <td>10.211.55.2</td>
+                                        <td>25/Oct/2019:11:23:49 +0530</td>
+                                        <td><code>'GET /wordpress/wp-content/plugins/custom_plugin/check_user.php?userid=1 UNION ALL SELECT CONCAT(0x7171787671,0x537653544175467a724f,0x71707a7871),NULL,NULL-- HTTP/1.1'</code></td>
+                                        <td><code>Mozilla/5.0 (Windows; U; Windows NT 6.1; ru; rv:1.9.2.3) Gecko/20100401 Firefox/4.0 (.NET CLR 3.5.30729)</code></td>
+                                        <td style="color: #5ebc5e;font-weight: 600;" > Clean</td>
+                                        </tr>
+
+                                        <tr>
+                                        <td>10.211.55.2</td>
+                                        <td>25/Oct/2018:11:23:49 +0530</td>
+                                        <td><code>GET /sqli-labs HTTP/1.1</code></td>
+                                        <td><code>Mozilla/5.0 (Windows; U; Windows NT 6.1; ru; rv:1.9.2.3) Gecko/20100401 Firefox/4.0 (.NET CLR 3.5.30729)</code></td>
+                                        <td style="color: #c2383e;font-weight: 600;" > Malicious</td>
+                                        </tr>
+
+                                    </tbody>
+                                    </table>
+                         
+                                
+                                 </div>   
+                            </div>
+                        </div>
+                    </div>
 {% endblock %}
