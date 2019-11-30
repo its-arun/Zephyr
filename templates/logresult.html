@@ -3,7 +3,7 @@
 {% block content %}
     <div class="card">
                         <div class="card-header">
-                            <h4 id="cards" class="card-title">access.log - Detailed Analysis</h4>
+                            <h4 id="cards" class="card-title">{{ filename }} - Detailed Analysis</h4>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
                                     <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
@@ -25,22 +25,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {% for logs in data %}
                                         <tr>
-                                        <td>10.211.55.2</td>
-                                        <td>25/Oct/2019:11:23:49 +0530</td>
-                                        <td><code>'GET /wordpress/wp-content/plugins/custom_plugin/check_user.php?userid=1 UNION ALL SELECT CONCAT(0x7171787671,0x537653544175467a724f,0x71707a7871),NULL,NULL-- HTTP/1.1'</code></td>
-                                        <td><code>Mozilla/5.0 (Windows; U; Windows NT 6.1; ru; rv:1.9.2.3) Gecko/20100401 Firefox/4.0 (.NET CLR 3.5.30729)</code></td>
-                                        <td style="color: #5ebc5e;font-weight: 600;" > Clean</td>
+                                        <td>{{ logs['IP'] }}</td>
+                                        <td>{{ logs['Date'] }}</td>
+                                        <td><code>{{ logs['Request'] }}</code></td>
+                                        <td><code>{{ logs['User-Agent'] }}</code></td>
+                                        {% if logs['Verdict'] == 'Clean' %}
+                                            <td style="color: #5ebc5e;font-weight: 600;" > Clean</td>
+                                        {% else %}
+                                            <td style="color: #c2383e;font-weight: 600;" > Malicious</td>
+                                        {% endif %}
                                         </tr>
-
-                                        <tr>
-                                        <td>10.211.55.2</td>
-                                        <td>25/Oct/2018:11:23:49 +0530</td>
-                                        <td><code>GET /sqli-labs HTTP/1.1</code></td>
-                                        <td><code>Mozilla/5.0 (Windows; U; Windows NT 6.1; ru; rv:1.9.2.3) Gecko/20100401 Firefox/4.0 (.NET CLR 3.5.30729)</code></td>
-                                        <td style="color: #c2383e;font-weight: 600;" > Malicious</td>
-                                        </tr>
-
+                                        {% endfor %}
                                     </tbody>
                                     </table>
                          

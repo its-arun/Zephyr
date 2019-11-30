@@ -23,7 +23,7 @@ def malware():
     #data = gogo('access.log')
     return render_template('malwarescan.html', data=data)
 
-@app.route('/loghandler', methods = ['GET', 'POST'])
+@app.route('/loghandler', methods = ['POST'])
 def loghandler():
    if request.method == 'POST':
       f = request.files['file']
@@ -32,7 +32,7 @@ def loghandler():
       data = json.loads(gogo(os.path.join(app.config['UPLOAD_FOLDER'],filename)))
       os.remove(os.path.join(app.config['UPLOAD_FOLDER'],filename))
       #f.save(secure_filename(f.filename))
-      return render_template('logresult.html', data=data)
+      return render_template('logresult.html', data=data, filename=filename)
 
 @app.route('/malwarehandler', methods = ['GET', 'POST'])
 def malwarehandler():
